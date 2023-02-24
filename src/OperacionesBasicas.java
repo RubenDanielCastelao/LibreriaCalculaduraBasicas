@@ -11,13 +11,14 @@ public class OperacionesBasicas {
     static final int SUBSTRACTION = 2;
     static  final int MULT = 3;
     static  final  int DIV = 4;
+    static final int RAIZ = 5;
     private OperacionesBasicas(){};
 
     /**
      *
      * @param device Usado para elegir la operacion que se va a usar
      * @param num1 Primer numero
-     * @param num2 Segundo numero
+     * @param num2 Segundo numero o indice de la raiz en caso de usarse
      * @return Float resultado de la operacion
      */
     public static Float operar(int device, float num1,float num2){ //retornamos FLOAT para poder devolver null
@@ -50,6 +51,21 @@ public class OperacionesBasicas {
                     System.out.println("DIV ERROR");
                 }
                 break;
+            case RAIZ:
+                float sqrt;
+                try{
+                    if(num2 == 2){
+                        sqrt = (float)Math.sqrt(num1);
+                        return sqrt;
+                    } else if (num2 == 3) {
+                        sqrt = (float)Math.cbrt(num1);
+                    } else{
+                        sqrt = (float)Math.pow(num1, 1.0 / num2);
+                        return sqrt;
+                    }
+                }catch (Exception e){
+                    System.out.println("RAIZ ERROR");
+                }
             default:
                 System.out.println("OPTION DOES NOT EXIST");
                 break;
