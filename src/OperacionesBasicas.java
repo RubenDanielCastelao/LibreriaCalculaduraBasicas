@@ -18,7 +18,7 @@ public class OperacionesBasicas {
      *
      * @param device Usado para elegir la operacion que se va a usar
      * @param num1 Primer numero
-     * @param num2 Segundo numero
+     * @param num2 Segundo numero o indice de la raiz en caso de usarse
      * @return Float resultado de la operacion
      */
     public static Float operar(int device, float num1,float num2){ //retornamos FLOAT para poder devolver null
